@@ -1,3 +1,4 @@
+"use client"
 import { useState } from 'react';
 import { padding } from '../styles';
 import Link from "next/link";
