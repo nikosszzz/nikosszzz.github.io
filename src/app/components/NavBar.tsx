@@ -14,7 +14,7 @@ const navigation = [
 ]
 
 export default function Navbar() {
-    const [activePage, setActivePage] = useState(window.location.pathname.toString());
+    const [activePage, setActivePage] = useState(typeof window !== "undefined" ? window.location.pathname.toString() : "/");
 
     return (
         <nav className={`${padding.X} w-full flex items-center py-5 fixed top-0 z-20 backdrop-blur-xl`}>
