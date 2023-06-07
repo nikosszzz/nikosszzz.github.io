@@ -4,6 +4,7 @@ const nextConfig = {
     compress: true,
     swcMinify: true,
     images: {
+        unoptimized: true,
         dangerouslyAllowSVG: true,
         remotePatterns: [
             {
