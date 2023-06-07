@@ -1,7 +1,9 @@
-import Footer from "./components/Footer"
-import Navbar from "./components/NavBar"
-import './globals.css'
-import { Inter } from 'next/font/google'
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("./components/Footer"));
+const Navbar = dynamic(() => import("./components/NavBar"));
+import './globals.css';
+import { Inter } from 'next/font/google';
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <Suspense>
+          <Navbar />
+          {children}
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )
