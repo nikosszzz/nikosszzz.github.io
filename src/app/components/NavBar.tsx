@@ -30,13 +30,13 @@ export default function Navbar() {
                 >
                     <Image src="/githubpfp.webp" width={460} height={460} className='w-9 h-9 object-contain' alt={""} />
                 </Link>
-                <ul className='list-none sm:flex flex-row gap-10'>
+                <ul className='list-none inline-flex flex-row gap-5 md:gap-10'>
                     {navigation.map((nav) => (
                         <li key={nav.id}
                             className={`${activePage === nav.id
                                 ? "text-white"
                                 : "text-zinc-300"
-                                }  hover:text-white text-[18px] font-medium cursor-pointer inline pr-2 pl-2 items-center transition ease-in 500ms
+                                }  hover:text-white text-[18px] font-medium cursor-pointer inline pr-2 pl-2 items-center self-center transition ease-in 500ms
                             `}
                             onClick={() => setActivePage(nav.id)}
                         >
