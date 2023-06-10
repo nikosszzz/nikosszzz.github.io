@@ -4,12 +4,14 @@ const Navbar = dynamic(() => import("./components/NavBar"));
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { Suspense } from "react";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'nikoszz - Personal Website',
   description: 'Welcome to my website.',
+  icons: "https://avatars.githubusercontent.com/u/53112175"
 }
 
 export default function RootLayout({
