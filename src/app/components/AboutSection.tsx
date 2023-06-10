@@ -4,7 +4,7 @@ import { padding } from "../styles";
 export default function AboutSection() {
     return (
         <section className={`${padding.XY} relative w-full`} id="about">
-            <p className="text-6xl w-[312px] font-extrabold md:p-3 rounded-full backdrop-blur-xl bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">About Me</p>
+            <p className="text-5xl md:text-6xl w-[235px] md:w-[312px] font-extrabold md:p-3 rounded-full backdrop-blur-xl bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">About Me</p>
             <p className="text-2xl">
                 Hello! I&apos;m Nikos, a 17 year old living in Greece. I am striving to become an software engineer but in the meanwhile I am experimenting in alot of different fields such as web development. I am actively involved with expanding and enriching my knowledge and sharpening my skills/abilities. I am actively using and experimenting with the following languages and frameworks:
                 <Image src="https://skillicons.dev/icons?i=react,electron,nextjs,nodejs,ts,js,html,css,kotlin,tauri" height={48} width={512} alt={"My actively used languages & frameworks"} />

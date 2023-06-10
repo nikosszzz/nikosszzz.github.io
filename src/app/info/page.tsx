@@ -25,7 +25,7 @@ const repoData = [
 
 export default function Info() {
     return (
-        <main>
+        <div className=" w-screen">
             <section className="relative w-full h-[800px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url("/landingBg.webp")` }}>
             <div className={`${padding.X} absolute flex flex-col justify-center items-center h-full w-full`}>
                 <p className="w-64 md:p-3 md:w-96 text-2xl font-medium md:text-3xl backdrop-blur-xl text-center align-center items-center rounded-full">
@@ -34,7 +34,7 @@ export default function Info() {
             </div>
             </section>
             <section className={`${padding.XY} relative w-full`}>
-                <p className="text-6xl w-[380px] font-extrabold md:p-3 rounded-full backdrop-blur-xl bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Repositories</p>
+                <p className="text-5xl md:text-6xl w-[300px] md:w-[380px] font-extrabold md:p-3 rounded-full backdrop-blur-xl bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Repositories</p>
                 <p className="text-2xl">
                     Here are some of my repositories.
                 </p>
@@ -53,6 +53,6 @@ export default function Info() {
                 </div>
             ))}
             </section>
-        </main>
+        </div>
     )
 }
