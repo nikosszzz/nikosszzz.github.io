@@ -9,6 +9,16 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* Hide scrollbar on Blink/Chromium Browsers */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar on Firefox/Mozilla-like Browsers */
+::-moz-scrollbar {
+     display: none;
+}
+
 body {
   background-color: #0e1212;
 }

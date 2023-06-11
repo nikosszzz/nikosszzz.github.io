@@ -16,8 +16,9 @@ const nextConfig = {
     },
     experimental: {
         optimizeCss: true,
-        optimisticClientCache: true
+        optimisticClientCache: true,
+        typedRoutes: true
     }
 }
 
-module.exports = nextConfig
+export default nextConfig;
