@@ -53,7 +53,7 @@ const accountData = [
             </svg>
         ),
         type: "discord",
-        name: "nikoszz#1004",
+        name: "deoptimize",
         description: "My Discord account.",
         url: "https://discord.com/users/327065865201909762"
     }
