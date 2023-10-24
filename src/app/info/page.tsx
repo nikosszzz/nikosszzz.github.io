@@ -91,7 +91,7 @@ export default function Info() {
                 </div>
             </section>
             <section className={`${padding.XY} relative w-full`}>
-                <p className="text-5xl md:text-6xl w-[300px] md:w-[380px] font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Repositories</p>
+                <p className="text-5xl md:text-6xl inline-block pr-2 pl-2 font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Repositories</p>
                 <p className="text-2xl">
                     Here are some of my GitHub repositories/projects.
                 </p>
@@ -125,7 +125,7 @@ export default function Info() {
                 ))}
             </section>
             <section className={`${padding.XY} relative w-full`}>
-                <p className="text-5xl md:text-6xl w-[330px] md:w-[420px] font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Contributions</p>
+                <p className="text-5xl md:text-6xl inline-block pr-2 pl-2 font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Contributions</p>
                 <p className="text-2xl">
                     Here are the projects I have contributed to.
                 </p>
@@ -164,7 +164,7 @@ export default function Info() {
                 ))}
             </section>
             <section className={`lg:px-22 sm:px-16 px-6 sm:py-4 py-6 relative w-full`}>
-                <p className="text-5xl md:text-6xl w-[260px] md:w-[340px] font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Find me on</p>
+                <p className="text-5xl md:text-6xl inline-block pr-2 pl-2 font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Find me on</p>
                 {accountData.map((d) => (
                     <div key={d.type} className="mt-4 mb-4 p-5 rounded-lg shadow bg-primary">
                         <a href={d.url} target="_blank" className="flex flex-row pr-0">
