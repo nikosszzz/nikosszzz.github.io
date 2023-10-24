@@ -14,6 +14,33 @@ export default function AboutSection() {
                     </div>  
                 </div>
                 I&apos;ve started experimenting with coding when I was 13 and from that point onwards I&apos;ve decided to follow the path of being a developer. I hope to meet others that are also interested in this field and collaborate with them aswell as seek out new opportunities.
+
+                <div className="pt-10">
+                    You can also donate to support me if you wish to, using the buttons below.
+                    <div className="pt-2">
+                        <a href="https://liberapay.com/nikoszz/donate">
+                            <div className="box-content inline-block pr-2 pl-2 text-3xl font-extrabold rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">
+                                <div className="flex">
+                                    <Image src="/liberapayLogo.webp" width={32} height={32} className='w-8 h-8 mr-2 self-center rounded-xl' alt={""} /> Liberapay
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://paypal.me/nikoszz">
+                            <div className="box-content inline-block pr-2 pl-2 text-3xl font-extrabold rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">
+                                <div className="flex">
+                                    <Image src="/paypalLogo.webp" width={32} height={32} className='w-8 h-8 mr-2 self-center rounded-xl' alt={""} /> PayPal
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://ko-fi.com/nikoszz">
+                            <div className="box-content inline-block pr-2 pl-2 text-3xl font-extrabold rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">
+                                <div className="flex">
+                                    <Image src="/kofiLogo.webp" width={32} height={32} className='w-8 h-8 mr-2 self-center rounded-xl' alt={""} /> Ko-Fi
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     )

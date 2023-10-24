@@ -28,6 +28,21 @@ const repoData = [
     }
 ]
 
+const contribData = [
+    {
+        name: "AliucordRN",
+        url: "https://github.com/Aliucord/AliucordRN",
+        desc: "Aliucord Rewrite for the new Discord React Native alpha. (Not maintained)",
+        extra: ["discord", "typescript", "react"]
+    },
+    {
+        name: "bloxflip-autocrash",
+        url: "https://github.com/carince/bloxflip-autocrash",
+        desc: "Bloxflip crash automation using the martingale strategy. Earn robux passively while you sit back!",
+        extra: ["typescript"]
+    }
+]
+
 const accountData = [
     {
         icon: (
@@ -87,11 +102,50 @@ export default function Info() {
                                 <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" id="mainIconPathAttribute" fill="#ffffff" />
                             </svg>
                             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{d.name}</h5>
-                            {d.extra.map(ext => (
-                                <div className="ml-2 h-32px w-32px" key={ext}>
-                                    <Image src={`https:/skillicons.dev/icons?i=${ext}`} height={28} width={28} alt={"Project language"} className="" />
+                            {
+                                <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
+                                    <Image src={`https:/skillicons.dev/icons?i=${d.extra.join(",")}`} height={64} width={64} alt={"Project language"} className="" />
                                 </div>
-                            ))}
+                            }
+
+                        </a>
+                        <div className="flex-row flex font-normal text-gray-500 dark:text-gray-400">
+                            <span className="mr-[5px]">
+                                {d.desc}
+                            </span>
+                            <a href={d.url} target="_blank" className="ml-auto place-self-center h-5 inline-flex items-center rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d] hover:underline pl-[5px] pr-[5px]">
+                                Go
+                                <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </section>
+            <section className={`${padding.XY} relative w-full`}>
+                <p className="text-5xl md:text-6xl w-[330px] md:w-[420px] font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Contributions</p>
+                <p className="text-2xl">
+                    Here are the projects I have contributed to.
+                </p>
+                {contribData.map((d) => (
+                    <div key={d.name} className="mt-4 mb-4 p-5 rounded-lg shadow bg-primary">
+                        <a href={d.url} target="_blank" className="flex flex-row">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512" className="mr-[10px]">
+                                <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" id="mainIconPathAttribute" fill="#ffffff" />
+                            </svg>
+                            <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{d.name}</h5>
+                            {
+                                d.extra.length >= 3 ?
+                                    <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
+                                        <Image src={`https:/skillicons.dev/icons?i=${d.extra.join(",")}`} height={100} width={100} alt={"Project language"} className="" />
+                                    </div>
+                                    :
+                                    <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
+                                        <Image src={`https:/skillicons.dev/icons?i=${d.extra.join(",")}`} height={32} width={32} alt={"Project language"} className="" />
+                                    </div>
+                            }
 
                         </a>
                         <div className="flex-row flex font-normal text-gray-500 dark:text-gray-400">
