@@ -104,7 +104,7 @@ export default function Info() {
                             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{d.name}</h5>
                             {
                                 <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
-                                    <Image src={`https:/skillicons.dev/icons?i=${d.extra.join(",")}`} height={64} width={64} alt={"Project language"} className="" />
+                                    <Image src={`https://skillicons.dev/icons?i=${d.extra.join(",")}`} height={64} width={64} alt={"Project language"} className="" />
                                 </div>
                             }
 
@@ -139,11 +139,11 @@ export default function Info() {
                             {
                                 d.extra.length >= 3 ?
                                     <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
-                                        <Image src={`https:/skillicons.dev/icons?i=${d.extra.join(",")}`} height={100} width={100} alt={"Project language"} className="" />
+                                        <Image src={`https://skillicons.dev/icons?i=${d.extra.join(",")}`} height={100} width={100} alt={"Project language"} className="" />
                                     </div>
                                     :
                                     <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
-                                        <Image src={`https:/skillicons.dev/icons?i=${d.extra.join(",")}`} height={32} width={32} alt={"Project language"} className="" />
+                                        <Image src={`https://skillicons.dev/icons?i=${d.extra.join(",")}`} height={32} width={32} alt={"Project language"} className="" />
                                     </div>
                             }
 
