@@ -3,6 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     output: "export",
     compress: true,
+    optimizeFonts: true,
     swcMinify: true,
     images: {
         unoptimized: true,
@@ -17,7 +18,9 @@ const nextConfig = {
     experimental: {
         optimizeCss: true,
         optimisticClientCache: true,
-        typedRoutes: true
+        typedRoutes: true,
+        optimizeServerReact: true,
+        serverMinification: true
     }
 }
 

@@ -1,30 +1,50 @@
+import Icon from "../components/Icon";
 import { padding } from "../styles";
-import Image from "next/image";
 
-const repoData = [
+const projectsData = [
     {
+        icon: "github",
         name: "musicbot",
         url: "https://github.com/nikosszzz/musicbot",
         desc: "A fast Discord.JS Bot written in TypeScript using Discord.JS 14 with YouTube and Spotify support built-in.",
         extra: ["discord", "typescript"]
     },
     {
+        icon: "github",
         name: "windows-app",
         url: "https://github.com/nikosszzz/windows-app",
         desc: "A test project Windows Application built in React using an Electron entrypoint. Purely experimental hobby project to mess around with Electron & React.",
         extra: ["react", "typescript"]
     },
     {
+        icon: "github",
         name: "vd-plugins",
         url: "https://github.com/nikosszzz/vd-plugins",
         desc: "My Vendetta plugins.",
         extra: ["discord", "typescript"]
     },
     {
+        icon: "github",
         name: "discordrn-themes",
         url: "https://github.com/nikosszzz/discordrn-themes",
         desc: "A repository consisting of Vendetta/Aliucord Themes.",
         extra: ["discord", "css"]
+    },
+    {
+        icon: "discord",
+        name: "Infinium Anti-Nuke",
+        url: "https://discord.com/oauth2/authorize?client_id=807520591065120819&permissions=1102128942247&scope=bot+applications.commands",
+        desc: "A bot that I made that protects servers from possible attacks and nukers.",
+        extra: ["typescript"],
+        button_text: "Invite"
+    },
+    {
+        icon: "discord",
+        name: "Infinium",
+        url: "https://discord.com/oauth2/authorize?client_id=812605665143029770&permissions=1633668169175&scope=bot+applications.commands",
+        desc: "A bot that I made that has utility, info, moderation and fun commands.",
+        extra: ["typescript"],
+        button_text: "Invite"
     }
 ]
 
@@ -57,9 +77,7 @@ const accountData = [
     },
     {
         icon: (
-            <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 512 512" className="mr-[10px]">
-                <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" id="mainIconPathAttribute" fill="#ffffff" />
-            </svg>
+            <Icon icon={"github"} height={32} width={32} className="mr-[10px]" />
         ),
         type: "github",
         name: "nikosszzz",
@@ -93,18 +111,16 @@ export default function Info() {
             <section className={`${padding.XY} relative w-full`}>
                 <p className="text-5xl md:text-6xl inline-block pr-2 pl-2 font-extrabold md:p-3 rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">Repositories</p>
                 <p className="text-2xl">
-                    Here are some of my GitHub repositories/projects.
+                    Here are some of my GitHub repositories & various projects.
                 </p>
-                {repoData.map((d) => (
+                {projectsData.map((d) => (
                     <div key={d.name} className="mt-4 mb-4 p-5 rounded-lg shadow bg-primary">
                         <a href={d.url} target="_blank" className="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512" className="mr-[10px]">
-                                <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" id="mainIconPathAttribute" fill="#ffffff" />
-                            </svg>
+                            <Icon icon={d.icon} height={32} width={32} className="mr-[10px]" />
                             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{d.name}</h5>
                             {
                                 <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
-                                    <Image src={`https://skillicons.dev/icons?i=${d.extra.join(",")}`} height={64} width={64} alt={"Project language"} className="" />
+                                    <Icon icon={d.extra} height={d.extra.length >= 2 ? 64 : 32} width={d.extra.length >= 2 ? 64 : 32} />
                                 </div>
                             }
 
@@ -114,7 +130,7 @@ export default function Info() {
                                 {d.desc}
                             </span>
                             <a href={d.url} target="_blank" className="ml-auto place-self-center h-5 inline-flex items-center rounded-full bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d] hover:underline pl-[5px] pr-[5px]">
-                                Go
+                                {d.button_text ? d.button_text : "Go"}
                                 <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                                     <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
@@ -132,18 +148,16 @@ export default function Info() {
                 {contribData.map((d) => (
                     <div key={d.name} className="mt-4 mb-4 p-5 rounded-lg shadow bg-primary">
                         <a href={d.url} target="_blank" className="flex flex-row">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512" className="mr-[10px]">
-                                <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" id="mainIconPathAttribute" fill="#ffffff" />
-                            </svg>
+                            <Icon icon={"github"} height={32} width={32} className="mr-[10px]" />
                             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">{d.name}</h5>
                             {
                                 d.extra.length >= 3 ?
                                     <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
-                                        <Image src={`https://skillicons.dev/icons?i=${d.extra.join(",")}`} height={100} width={100} alt={"Project language"} className="" />
+                                        <Icon icon={d.extra} height={96} width={96} />
                                     </div>
                                     :
                                     <div className="ml-2 h-32px w-32px" key={`${d.name}-langicons`}>
-                                        <Image src={`https://skillicons.dev/icons?i=${d.extra.join(",")}`} height={32} width={32} alt={"Project language"} className="" />
+                                        <Icon icon={d.extra} height={32} width={32} />
                                     </div>
                             }
 

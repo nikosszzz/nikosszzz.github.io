@@ -3,7 +3,7 @@ import Image from "next/image"
 export default function Footer() {
     return (
         //#292e2e - old color
-        <footer className="bottom-0 rounded-2xl shadow m-4 bg-[#303636]">
+        <footer className="bottom-0 rounded-2xl shadow m-4 bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">
             <div className="w-full mx-auto max-w-screen-xl pt-2 pb-2 flex">
                 <div className="text-xl mr-auto ml-auto text-center flex">
                     Made with ❤️ using

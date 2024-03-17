@@ -11,7 +11,14 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'nikoszz - Personal Website',
   description: 'Welcome to my website.',
-  icons: "https://avatars.githubusercontent.com/u/53112175"
+  icons: "https://avatars.githubusercontent.com/u/53112175",
+  openGraph: {
+    title: 'nikoszz - Personal Website',
+    description: 'Welcome to my website.',
+    images: [{
+      url: "https://avatars.githubusercontent.com/u/53112175"
+    }]
+  }
 }
 
 export default function RootLayout({
