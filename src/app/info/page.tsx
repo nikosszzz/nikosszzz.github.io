@@ -6,14 +6,14 @@ const projectsData = [
         icon: "github",
         name: "musicbot",
         url: "https://github.com/nikosszzz/musicbot",
-        desc: "A fast Discord.JS Bot written in TypeScript using Discord.JS 14 with YouTube and Spotify support built-in.",
+        desc: "A fast Discord.JS 14 Bot written in TypeScript with YouTube, Spotify & SoundCloud support built-in.",
         extra: ["discord", "typescript"]
     },
     {
         icon: "github",
         name: "windows-app",
         url: "https://github.com/nikosszzz/windows-app",
-        desc: "A test project Windows Application built in React using an Electron entrypoint. Purely experimental hobby project to mess around with Electron & React.",
+        desc: "A test project Windows Application built in React using an Electron entrypoint. Purely experimental hobby project to mess around with Electron & React. Sorry for the code mess.",
         extra: ["react", "typescript"]
     },
     {
