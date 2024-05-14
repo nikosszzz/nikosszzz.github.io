@@ -14,10 +14,7 @@ export const metadata: Metadata = {
   icons: "https://avatars.githubusercontent.com/u/53112175",
   openGraph: {
     title: 'nikoszz - Personal Website',
-    description: 'Welcome to my website.',
-    images: [{
-      url: "https://avatars.githubusercontent.com/u/53112175"
-    }]
+    description: 'Welcome to my website.'
   }
 }
 
