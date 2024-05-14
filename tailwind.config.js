@@ -13,10 +13,11 @@ module.exports = {
         tertiary: "#3c3836",
         "black-100": "#32302f",
         "black-200": "#1d2021",
-        "white-100": "#f3f3f3"
+        "white-100": "#f3f3f3",
+        "wash": "rgb(255, 255, 255 / 1)"
       },
       animation: {
-          "typing": "blinking 1s infinite",
+        "typing": "blinking 1s infinite",
       },
       keyframes: {
         blinking: {
@@ -26,6 +27,11 @@ module.exports = {
         }
       }
     },
+    screens: {
+      "sm": "320px",
+      "md": "1024px",
+      "lg": "1280px"
+    }
   },
   plugins: [],
 }

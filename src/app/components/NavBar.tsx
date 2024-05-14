@@ -1,8 +1,8 @@
 "use client";
-import { padding } from '../styles';
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Button from "./Button";
 
 const navigation = [
     {
@@ -18,31 +18,33 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <nav className={`${padding.X} w-full flex items-center py-5 fixed top-0 z-20 backdrop-blur-xl`}>
-            <div className='w-full flex justify-between items-centermax-w-7xl mx-auto'>
-                <Link
-                    href={"/"}
-                    className='flex items-center gap-2'
-                    onClick={() => {
-                        window.scrollTo(0, 0)
-                    }}
-                >
-                    <Image src="/githubpfp.webp" width={460} height={460} className='w-9 h-9 object-contain' alt={""} />
-                </Link>
-                <ul className='list-none inline-flex flex-row gap-5 md:gap-10'>
+        <div className={`w-full ps-10 pe-10 sm:ps-3 sm:pe-3 fixed top-0 z-20 bg-secondary`}>
+            <nav className='flex justify-between items-center h-16 gap-2'>
+                <div className="flex flex-row items-center gap-2">
+                    <Link
+                        href={"/"}
+                        onClick={() => {
+                            window.scrollTo(0, 0)
+                        }}
+                    >
+                        <Image src="/githubpfp.webp" width={460} height={460} className='w-9 h-9' alt={""} />
+                    </Link>
+                    <span className="text-base lg:text-2xl"> Personal Website </span>
+                </div>
+                <div className='inline-flex flex-row gap-5 sm:gap-2'>
                     {navigation.map((nav) => (
-                        <li key={nav.id}
+                        <Button key={nav.id}
                             className={`${pathname === nav.id
                                 ? "text-white"
                                 : "text-zinc-300"
-                                } hover:text-white text-[18px] font-medium cursor-pointer inline pr-2 pl-2 items-center self-center transition ease-in 500ms
+                                } bg-zinc-800 hover:text-white text-[18px] sm:text-base font-medium pl-5 pr-5 items-center transition ease-in 500ms 
                             `}
                         >
                             <a href={nav.id}>{nav.title}</a>
-                        </li>
+                        </Button>
                     ))}
-                </ul>
-            </div>
-        </nav>
+                </div>
+            </nav>
+        </div>
     )
 }

@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
+import { Metadata } from "next";
 const Footer = dynamic(() => import("./components/Footer"));
 const Navbar = dynamic(() => import("./components/NavBar"));
-import './globals.css';
-import { Inter } from 'next/font/google';
-import { Suspense } from "react";
-import { Metadata } from "next";
 
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css';
+const inter = Inter({ subsets: ['latin'] });
+import { Inter } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'nikoszz - Personal Website',
