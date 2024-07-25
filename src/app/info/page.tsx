@@ -5,6 +5,7 @@ import discord from "../../../public/discord.png";
 import react from "../../../public/react.png";
 import typescript from "../../../public/typescript.png";
 import css from "../../../public/css.png";
+import Link from "next/link";
 
 const projectsData = [
     {
@@ -120,26 +121,22 @@ export default function Info() {
                 <div className="flex flex-col gap-2">
                     {projectsData.map((d) => (
                         <div key={d.name} className="px-4 py-4 rounded-lg shadow bg-primary">
-                            <a href={d.url} target="_blank" className="flex flex-row gap-2 mb-2">
+                            <Link href={{ href: d.url }} target="_blank" className="flex flex-row gap-2 mb-2">
                                 <Icon icon={"github"} height={32} width={32} />
                                 <h5 className="text-lg md:text-2xl font-semibold place-self-center text-gray-900 dark:text-white">{d.name}</h5>
                                 <div key={`${d.name}-icons`} className="flex flex-row gap-2 w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]">
                                     <Icon icon={d.extra} />
                                 </div>
 
-                            </a>
+                            </Link>
                             <div className="flex flex-row justify-between text-gray-500 dark:text-gray-400">
                                 <span className="mr-[5px]">
                                     {d.desc}
                                 </span>
                                 <Button className="h-5 r bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d] hover:underline pl-2 pr-2">
-                                    <a href={d.url} target="_blank" className="flex flex-row items-center">
+                                    <Link href={{ href: d.url }} target="_blank" className="flex flex-row items-center">
                                         {d.button_text ? d.button_text : "Go"}
-                                        <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                                        </svg>
-                                    </a>
+                                    </Link>
                                 </Button>
                             </div>
                         </div>
@@ -152,26 +149,22 @@ export default function Info() {
                 <div className="flex flex-col gap-2">
                     {contribData.map((d) => (
                         <div key={d.name} className="px-4 py-4 rounded-lg shadow bg-primary">
-                            <a href={d.url} target="_blank" className="flex flex-row gap-2 mb-2">
+                            <Link href={{ href: d.url }} target="_blank" className="flex flex-row gap-2 mb-2">
                                 <Icon icon={"github"} height={32} width={32} />
                                 <h5 className="text-lg md:text-2xl font-semibold place-self-center text-gray-900 dark:text-white">{d.name}</h5>
                                 <div key={`${d.name}-icons`} className="flex flex-row gap-2 w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]">
                                     <Icon icon={d.extra} />
                                 </div>
 
-                            </a>
+                            </Link>
                             <div className="flex flex-row justify-between text-gray-500 dark:text-gray-400">
                                 <span className="mr-[5px]">
                                     {d.desc}
                                 </span>
                                 <Button className="h-5 r bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d] hover:underline pl-2 pr-2">
-                                    <a href={d.url} target="_blank" className="flex flex-row items-center">
+                                    <Link href={{ href: d.url }} target="_blank" className="flex flex-row items-center">
                                         Go
-                                        <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                                        </svg>
-                                    </a>
+                                    </Link>
                                 </Button>
                             </div>
                         </div>
@@ -181,23 +174,19 @@ export default function Info() {
                 <Button className="mt-10 text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d] px-5" span={true}> Find me on </Button>
                 <div className="mt-2 flex flex-col gap-2">
                     {accountData.map((d) => (
-                        <div key={d.name} className="px-4 py-4 rounded-lg shadow bg-primary">
-                            <a href={d.url} target="_blank" className="flex flex-row gap-2 mb-2">
+                        <div key={d.type} className="px-4 py-4 rounded-lg shadow bg-primary">
+                            <Link href={{ href: d.url }} target="_blank" className="flex flex-row gap-2 mb-2">
                                 {d.icon}
                                 <h5 className="text-lg md:text-2xl font-semibold place-self-center text-gray-900 dark:text-white">{d.name}</h5>
-                            </a>
+                            </Link>
                             <div className="flex flex-row justify-between text-gray-500 dark:text-gray-400">
                                 <span className="mr-[5px]">
                                     {d.description}
                                 </span>
                                 <Button className="h-5 r bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d] hover:underline pl-2 pr-2">
-                                    <a href={d.url} target="_blank" className="flex flex-row items-center">
+                                    <Link href={{ href: d.url }} target="_blank" className="flex flex-row items-center">
                                         Go
-                                        <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                                            <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                                        </svg>
-                                    </a>
+                                    </Link>
                                 </Button>
                             </div>
                         </div>
