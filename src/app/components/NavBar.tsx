@@ -8,9 +8,14 @@ const navigation: { id: Route; title: string; }[] = [
     {
         id: "/",
         title: "Home",
-    }, {
-        id: "/info",
-        title: "Info"
+    },
+    {
+        id: "/about",
+        title: "About Me"
+    },
+    {
+        id: "/contact",
+        title: "Contact"
     }
 ]
 
@@ -19,7 +24,7 @@ export default function Navbar() {
     const router = useRouter();
 
     return (
-        <div className={`w-full ps-10 pe-10 sm:ps-3 sm:pe-3 fixed top-0 z-20 bg-secondary`}>
+        <div className="w-full ps-10 pe-10 sm:ps-3 sm:pe-3 fixed top-0 z-20 bg-secondary">
             <nav className='flex justify-between items-center h-16 gap-2'>
                 <div className="flex flex-row items-center gap-2">
                     <button>

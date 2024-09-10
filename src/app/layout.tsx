@@ -25,10 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} mt-16`}>
         <Suspense>
           <Navbar />
-          {children}
+          <div className="px-20 sm:px-5 pt-5">
+            {children}
+          </div>
           <Footer />
         </Suspense>
       </body>
