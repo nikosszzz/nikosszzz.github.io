@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Icon from "./components/Icon";
 import Button from "./components/Button";
 import Link from "next/link";

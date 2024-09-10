@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export function Card({ className, button, titleUrl, cardUrl, title, description, icon, children }: { className?: string, button?: React.ReactNode, titleUrl?: string, cardUrl?: string, title: string, description?: string | React.ReactNode, icon?: React.ReactNode, children?: React.ReactNode }): JSX.Element {
     return (
         <div className={`${className} px-4 py-4 rounded-lg shadow bg-primary`}>

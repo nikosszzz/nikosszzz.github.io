@@ -1,7 +1,5 @@
 import Button from "../components/Button";
 import Icon from "../components/Icon";
-import { padding } from "../styles";
-import Link from "next/link";
 
 const contactData = [
     {
