@@ -5,15 +5,13 @@ import tailwind from "../../../public/tailwind.png";
 export default function Footer() {
     return (
         //#292e2e - old color
-        <footer className="bottom-0 rounded-2xl shadow m-4 bg-gradient-to-r from-[#111717] via-[#292e2e] to-[#686c6d]">
-            <div className="w-full mx-auto max-w-screen-xl pt-2 pb-2 flex">
-                <div className="sm:text-lg md:text-xl mr-auto ml-auto text-center flex items-center">
+        <footer className="rounded-2xl shadow mx-4 mb-4 mt-auto bg-secondary pt-2 pb-2">
+                <div className="sm:text-base md:text-xl mx-auto text-center items-center justify-center flex flex-row">
                     Made with ❤️ using
-                    {<Image src={nextjs} height={32} width={32} alt={"Tailwind CSS"} className="mx-2" />}
+                    {<Image src={nextjs} height={32} width={32} alt={"Tailwind CSS"} className="mx-1" />}
                     and
-                    {<Image src={tailwind} height={32} width={32} alt={"NextJS"} className="mx-2" />}
+                    {<Image src={tailwind} height={32} width={32} alt={"NextJS"} className="mx-1" />}
                 </div>
-            </div>
         </footer>
     )
 }

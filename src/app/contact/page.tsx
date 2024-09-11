@@ -49,6 +49,6 @@ export default function Contact() {
                     </Button>
                 ))}
             </div>
-        </div >
+        </div>
     )
 }

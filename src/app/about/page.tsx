@@ -97,21 +97,21 @@ const projects = [
 export default function About() {
     return (
         <div>
-            <div className="text-5xl md:text-6xl inline-block mb-5 font-extrabold rounded-full">About me</div>
-            <div className="text-2xl">
+            <div className="md:text-5xl sm:text-4xl inline-block mb-5 font-extrabold rounded-full">About me</div>
+            <div className="md:text-2xl sm:text-xl">
                 I&apos;ve started experimenting with coding when I was 13 and from that point onwards I&apos;ve decided to follow the path of being a developer. I hope to meet others that are also interested in this field and collaborate with them aswell as seek out new opportunities.
             </div>
 
             <div>
-                <div className="mt-5 mb-3 text-5xl font-extrabold">Tech Stack</div>
+                <div className="mt-5 mb-3 md:text-5xl font-extrabold sm:text-4xl">Tech Stack</div>
                 {
                     Object.entries(tech).map(([name, entries]) => (
                         <div className="flex flex-row items-center gap-2 mb-1" key={name.toLowerCase()}>
-                            <Button span={true} className="bg-primary">{name}</Button>
+                            <Button span={true} className="bg-primary md:text-xl md:px-8 sm:text-base sm:px-5">{name}</Button>
                             <div className="flex flex-row items-center gap-1.5">
                                 {entries.map(({ name, url }) =>
                                     <Link href={{ pathname: url }} key={name.toLowerCase()}>
-                                        <Icon icon={name.toLowerCase()} />
+                                        <Icon icon={name.toLowerCase()} className="sm:w-[32px] sm:h-[32px]" />
                                     </Link>
                                 )}
                             </div>
@@ -121,15 +121,15 @@ export default function About() {
             </div>
 
             <div>
-                <div className="mt-5 mb-3 text-5xl font-extrabold">Projects</div>
-                <div className="grid gap-1 grid-cols-3">
+                <div className="mt-5 mb-3 md:text-5xl sm:text-4xl font-extrabold">Projects</div>
+                <div className="grid gap-1 grid-cols-3 sm:grid-cols-2">
                     {
                         Object.values(projects).map((i) => (
                             <Card
-                                key={i.title}
+                                key={i.title.toLowerCase()}
                                 title={i.title}
                                 description={i.description}
-                                titleUrl={i.url}
+                                cardUrl={i.url}
                                 icon={<Icon icon={i.icon} width={32} height={32} />}
                             />
                         ))

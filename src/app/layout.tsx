@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${inter.className} mt-16`}>
         <Suspense>
           <Navbar />
-          <div className="px-20 sm:px-5 pt-5">
+          <div className="px-20 sm:px-5 pt-5 min-h-[100dvh]">
             {children}
           </div>
           <Footer />
