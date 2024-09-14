@@ -93,7 +93,6 @@ const projects = [
     }
 ]
 
-// ../../../public/
 export default function About() {
     return (
         <div>
@@ -111,7 +110,7 @@ export default function About() {
                             <div className="flex flex-row items-center gap-1.5">
                                 {entries.map(({ name, url }) =>
                                     <Link href={{ pathname: url }} key={name.toLowerCase()}>
-                                        <Icon icon={name.toLowerCase()} className="sm:w-[32px] sm:h-[32px]" />
+                                        <Icon icon={name.toLowerCase()} className="w-[32px] h-[32px]" />
                                     </Link>
                                 )}
                             </div>
@@ -122,7 +121,7 @@ export default function About() {
 
             <div>
                 <div className="mt-5 mb-3 md:text-5xl sm:text-4xl font-extrabold">Projects</div>
-                <div className="grid gap-1 grid-cols-3 sm:grid-cols-2">
+                <div className="grid gap-1 md:grid-cols-3 sm:grid-cols-2">
                     {
                         Object.values(projects).map((i) => (
                             <Card
