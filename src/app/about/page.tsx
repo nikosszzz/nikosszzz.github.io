@@ -105,7 +105,7 @@ export default async function About() {
     );
 
     return (
-        <div>
+        <div className="mb-1">
             <div className="md:text-5xl sm:text-4xl inline-block mb-5 font-extrabold rounded-full">About me</div>
             <div className="md:text-2xl sm:text-xl">
                 I&apos;ve started experimenting with coding when I was 13 and from that point onwards I&apos;ve decided to follow the path of being a developer. I hope to meet others that are also interested in this field and collaborate with them aswell as seek out new opportunities.
@@ -133,25 +133,31 @@ export default async function About() {
                 <div className="mt-5 mb-3 md:text-5xl sm:text-4xl font-extrabold">Projects</div>
                 <div className="grid gap-1 md:grid-cols-3 sm:grid-cols-2">
                     {
-                        repoData.map(data => (
-                            <Card
-                                key={data.id}
-                                title={data.name}
-                                description={data.description}
-                                cardUrl={data.html_url}
-                                header={<div className="flex items-center mb-4 mr-0.5"><Image src={data.owner.avatar_url} width={24} height={24} className="mr-1.5 rounded-xl" alt="avatar github" />{data.owner.login}</div>}
+                        repoData.map(data => {
+                            const { id, name, description, html_url, language, stars_count, stargazers_count, owner } = data;
+
+                            return (<Card
+                                key={id}
+                                title={name}
+                                description={description}
+                                cardUrl={html_url}
+                                header={<div className="flex items-center mb-[1em] mr-0.5"><Image src={owner.avatar_url} width={24} height={24} className="mr-[0.3em] rounded-xl" alt="avatar github" />{owner.login}</div>}
                                 footer={<div className="leading-5 items-center flex">
                                     <div
-                                        className={`mr-2.5 before:w-3.5 before:h-3.5 before:content-[""] before:inline-block before:rounded-xl before:bg-[${getLangColor(data.language).replaceAll(`"`, "")}] before:translate-y-[0.1em] before:mr-1`}
+                                        className={`items-center flex mr-2.5 before:bg-[--lang-color] before:w-[0.8em] before:h-[0.8em] before:content-[""] before:inline-block before:rounded-xl before:translate-y-[0.1em] before:mr-1`}
+                                        style={{
+                                            "--lang-color": getLangColor(language)
+                                        } as React.CSSProperties}
                                     >
-                                        {data.language}
+                                        {language}
                                     </div>
                                     <div className="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" /></svg> {data.stars_count ?? data.stargazers_count}
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" /></svg>
+                                        {stars_count ?? stargazers_count}
                                     </div>
                                 </div>}
-                            />
-                        ))
+                            />)
+                        })
                     }
                 </div>
             </div>
