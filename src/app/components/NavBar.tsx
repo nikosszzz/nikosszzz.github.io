@@ -24,24 +24,23 @@ export default function Navbar() {
     const router = useRouter();
 
     return (
-        <div className="w-full ps-10 pe-10 sm:ps-3 sm:pe-3 fixed top-0 z-20 bg-secondary">
+        <div className="w-full ps-10 pe-10 sm:ps-3 sm:pe-3 bg-secondary">
             <nav className='flex justify-between items-center h-16'>
-                <div className="flex flex-row items-center gap-2 inline-block">
+                <div className="flex flex-row items-center gap-2 ">
                     <button>
-                        <Image src="/githubpfp.webp" width={460} height={460} className='w-9 h-9' alt={""} onClick={() => {
+                        <Image src="/githubpfp.webp" width={460} height={460} className='w-9 h-9 rounded-2xl' alt={""} onClick={() => {
                             if (pathname !== "/") router.push("/")
                         }} />
                     </button>
-                    <div className="sm:text-sm md:text-xl">Personal Website</div>
                 </div>
-                <div className='inline-flex flex-row gap-3 sm:gap-1'>
+                <div className='inline-flex flex-row gap-2'>
                     {navigation.map((nav) => (
                         <Button 
                             key={nav.id}
                             className={`${pathname === nav.id
                                 ? "text-white"
                                 : "text-zinc-300"
-                                } bg-zinc-800 hover:text-white md:text-base sm:text-sm font-medium md:px-5 sm:px-2 items-center transition ease-in 500ms 
+                                } bg-zinc-800 hover:text-white text-base font-medium px-5 items-center transition ease-in 500ms 
                             `}
                             onClick={() => router.push(nav.id)}
                         >

@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 export function Card({ className, button, cardUrl, title, description, icon, children, footer, header }: { className?: string, button?: ReactNode, cardUrl?: string, title: string, description?: string | ReactNode, icon?: ReactNode, children?: ReactNode, footer?: ReactNode, header?: ReactNode }): JSX.Element {
     return (
-        <a href={cardUrl ?? undefined} target="_blank" className={`${className} relative grid cursor-pointer p-[1em] rounded-lg shadow bg-primary`}>
+        <a href={cardUrl ?? undefined} target="_blank" className={`${className} relative flex flex-col cursor-pointer p-[1em] rounded-lg shadow bg-primary`}>
             {header}
             <div className="flex flex-row items-start gap-2 shrink">
                 {icon}

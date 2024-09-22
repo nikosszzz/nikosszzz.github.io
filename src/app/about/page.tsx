@@ -82,6 +82,7 @@ export default async function About() {
                 headers: new Headers({
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
                 }),
+                cache: "force-cache"
             } satisfies RequestInit;
 
             requestInit.headers.set("Accept", "application/vnd.github.v3+json");
@@ -105,14 +106,14 @@ export default async function About() {
     );
 
     return (
-        <div className="mb-1">
-            <div className="md:text-5xl sm:text-4xl inline-block mb-5 font-extrabold rounded-full">About me</div>
+        <div className="mb-3">
+            <div className="md:text-5xl sm:text-4xl inline-block mb-3 font-extrabold rounded-full">About me</div>
             <div className="md:text-2xl sm:text-xl">
                 I&apos;ve started experimenting with coding when I was 13 and from that point onwards I&apos;ve decided to follow the path of being a developer. I hope to meet others that are also interested in this field and collaborate with them aswell as seek out new opportunities.
             </div>
 
             <div>
-                <div className="mt-5 mb-3 md:text-5xl font-extrabold sm:text-4xl">Tech Stack</div>
+                <div className="mt-8 mb-3 md:text-5xl font-extrabold sm:text-4xl">Tech Stack</div>
                 {
                     Object.entries(tech).map(([name, entries]) => (
                         <div className="flex flex-row items-center gap-2 mb-1" key={name.toLowerCase()}>
@@ -130,7 +131,7 @@ export default async function About() {
             </div>
 
             <div>
-                <div className="mt-5 mb-3 md:text-5xl sm:text-4xl font-extrabold">Projects</div>
+                <div className="mt-8 mb-3 md:text-5xl sm:text-4xl font-extrabold">Projects</div>
                 <div className="grid gap-1 md:grid-cols-3 sm:grid-cols-2">
                     {
                         repoData.map(data => {
@@ -142,9 +143,9 @@ export default async function About() {
                                 description={description}
                                 cardUrl={html_url}
                                 header={<div className="flex items-center mb-[1em] mr-0.5"><Image src={owner.avatar_url} width={24} height={24} className="mr-[0.3em] rounded-xl" alt="avatar github" />{owner.login}</div>}
-                                footer={<div className="leading-5 items-center flex">
+                                footer={<div className="leading-5 items-center flex mt-auto">
                                     <div
-                                        className={`items-center flex mr-2.5 before:bg-[--lang-color] before:w-[0.8em] before:h-[0.8em] before:content-[""] before:inline-block before:rounded-xl before:translate-y-[0.1em] before:mr-1`}
+                                        className={`items-center flex md:mr-2 sm:mr-1 before:bg-[--lang-color] before:w-[0.8em] before:h-[0.8em] before:content-[""] before:inline-block before:rounded-xl before:translate-y-[0.1em] before:mr-1`}
                                         style={{
                                             "--lang-color": getLangColor(language)
                                         } as React.CSSProperties}

@@ -27,11 +27,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} mt-16`}>
+    <html lang="en" className="min-h-[100vh]">
+      <body className={`${inter.className} min-h-[100vh]`}>
         <Suspense>
           <Navbar />
-          <div className="px-20 sm:px-5 pt-5 min-h-[100dvh]">
+          <div className="px-20 sm:px-5 mt-2">
             {children}
           </div>
           <Footer />

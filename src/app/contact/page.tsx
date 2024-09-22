@@ -39,7 +39,7 @@ const contactData = [
 export default function Contact() {
     return (
         <div>
-            <div className="text-5xl md:text-6xl inline-block mb-5 font-extrabold rounded-full">Contact</div>
+            <div className="text-5xl md:text-6xl inline-block mb-2 font-extrabold rounded-full">Contact</div>
             <div className="flex flex-col">
                 {contactData.map((d) => (
                     <Button span={true} key={d.platform.toLowerCase()} className="bg-transparent flex flex-row gap-2 pl-0 pt-1">
