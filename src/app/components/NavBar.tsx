@@ -40,7 +40,7 @@ export default function Navbar() {
                             className={`${pathname === nav.id
                                 ? "text-white"
                                 : "text-zinc-300"
-                                } bg-zinc-800 hover:text-white text-base font-medium px-5 items-center transition ease-in 500ms 
+                                } bg-zinc-800 hover:text-white text-base font-medium sm:px-5 items-center transition ease-in 500ms 
                             `}
                             onClick={() => router.push(nav.id)}
                         >
