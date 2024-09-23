@@ -30,11 +30,15 @@ export default function RootLayout({
     <html lang="en" className="min-h-[100vh]">
       <body className={`${inter.className} min-h-[100vh]`}>
         <Suspense>
-          <Navbar />
-          <div className="px-20 sm:px-5 mt-2">
-            {children}
+          <div className="min-h-screen flex flex-col justify-between">
+            <Navbar />
+            <div className="flex flex-col flex-1 p-20 sm:p-5 mt-16">
+              <div className="flex-grow">
+                {children}
+              </div>
+              <Footer />
+            </div>
           </div>
-          <Footer />
         </Suspense>
       </body>
     </html>

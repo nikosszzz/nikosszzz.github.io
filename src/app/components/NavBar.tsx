@@ -24,7 +24,7 @@ export default function Navbar() {
     const router = useRouter();
 
     return (
-        <div className="w-full ps-10 pe-10 sm:ps-3 sm:pe-3 bg-secondary">
+        <div className="fixed z-20 top-0 start-0 w-full ps-10 pe-10 sm:ps-3 sm:pe-3 bg-secondary">
             <nav className='flex justify-between items-center h-16'>
                 <div className="flex flex-row items-center gap-2 ">
                     <button>
@@ -35,7 +35,7 @@ export default function Navbar() {
                 </div>
                 <div className='inline-flex flex-row gap-2'>
                     {navigation.map((nav) => (
-                        <Button 
+                        <Button
                             key={nav.id}
                             className={`${pathname === nav.id
                                 ? "text-white"
