@@ -41,7 +41,7 @@ const iconMap: { [key: string]: StaticImageData } = {
     fedora: fedoraIcon
 };
 
-export default function Icon({
+export function Icon({
     icon,
     height,
     width,

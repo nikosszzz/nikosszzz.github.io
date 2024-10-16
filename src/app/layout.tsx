@@ -1,15 +1,16 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Metadata } from "next";
+import { configDotenv } from "dotenv";
+import { Inter } from 'next/font/google';
+
+configDotenv();
+
 const Footer = dynamic(() => import("./components/Footer"));
 const Navbar = dynamic(() => import("./components/NavBar"));
 
 import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
-import { Inter } from 'next/font/google';
-
-import { configDotenv } from "dotenv";
-configDotenv();
 
 export const metadata: Metadata = {
   title: 'nikoszz - Personal Website',
@@ -28,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="min-h-[100vh]">
-      <body className={`${inter.className} min-h-[100vh]`}>
+      <body className={`${inter.className} min-h-[100vh] antialiased`}>
         <Suspense>
           <div className="min-h-screen flex flex-col justify-between">
             <Navbar />

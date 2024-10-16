@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import Button from "./Button";
+import { Button } from "./Button";
 import type { Route } from "next";
 
 const navigation: { id: Route; title: string; }[] = [
@@ -39,8 +39,8 @@ export default function Navbar() {
                             key={nav.id}
                             className={`${pathname === nav.id
                                 ? "text-white"
-                                : "text-zinc-300"
-                                } bg-zinc-800 hover:text-white text-base font-medium sm:px-5 items-center transition ease-in 500ms 
+                                : "text-zinc-400 transition ease-out 500ms"
+                                } bg-zinc-800 cursor-pointer md:hover:text-white text-base font-medium sm:px-2 md:px-2.5 items-center transition ease-in 500ms 
                             `}
                             onClick={() => router.push(nav.id)}
                         >

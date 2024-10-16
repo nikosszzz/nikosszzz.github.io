@@ -1,6 +1,6 @@
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import { Card } from "../components/Card";
-import Icon from "../components/Icon";
+import { Icon } from "../components/Icon";
 import Link from "next/link";
 import Image from "next/image";
 import { getLangColor } from "../utils/getLangColor";
@@ -107,7 +107,7 @@ export default async function About() {
 
     return (
         <div className="mb-3">
-            <div className="md:text-5xl sm:text-4xl inline-block mb-3 font-extrabold rounded-full">About me</div>
+            <div className="text-5xl md:text-6xl inline-block mb-2 font-extrabold">About me</div>
             <div className="md:text-2xl sm:text-xl">
                 I&apos;ve started experimenting with coding when I was 13 and from that point onwards I&apos;ve decided to follow the path of being a developer. I hope to meet others that are also interested in this field and collaborate with them aswell as seek out new opportunities.
             </div>
@@ -117,7 +117,7 @@ export default async function About() {
                 {
                     Object.entries(tech).map(([name, entries]) => (
                         <div className="flex flex-row items-center gap-2 mb-1" key={name.toLowerCase()}>
-                            <Button span={true} className="bg-primary md:text-xl md:px-8 sm:text-base sm:px-5">{name}</Button>
+                            <Button className="bg-primary md:text-xl md:px-8 sm:text-base sm:px-5">{name}</Button>
                             <div className="flex flex-row items-center gap-1.5">
                                 {entries.map(({ name, url }) =>
                                     <Link href={{ pathname: url }} key={name.toLowerCase()}>
@@ -140,12 +140,12 @@ export default async function About() {
                             return (<Card
                                 key={id}
                                 title={name}
-                                description={description}
+                                description={<span className="sm:text-sm md:text-base">{description}</span>}
                                 cardUrl={html_url}
                                 header={<div className="flex items-center mb-[1em] mr-0.5"><Image src={owner.avatar_url} width={24} height={24} className="mr-[0.3em] rounded-xl" alt="avatar github" />{owner.login}</div>}
                                 footer={<div className="leading-5 items-center flex mt-auto">
                                     <div
-                                        className={`items-center flex md:mr-2 sm:mr-1 before:bg-[--lang-color] before:w-[0.8em] before:h-[0.8em] before:content-[""] before:inline-block before:rounded-xl before:translate-y-[0.1em] before:mr-1`}
+                                        className={`items-center flex md:mr-2 sm:mr-1 sm:text-sm md:text-base before:bg-[--lang-color] before:w-[0.8em] before:h-[0.8em] before:sm:h-[0.6em] before:sm:w-[0.6em] before:content-[""] before:inline-block before:rounded-xl before:translate-y-[0.1em] before:mr-1`}
                                         style={{
                                             "--lang-color": getLangColor(language)
                                         } as React.CSSProperties}
@@ -153,8 +153,10 @@ export default async function About() {
                                         {language}
                                     </div>
                                     <div className="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" /></svg>
-                                        {stars_count ?? stargazers_count}
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="sm:w-4 sm:h-4 md:w-5 md:h-5" viewBox="0 -960 960 960" fill="#e8eaed"><path d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" /></svg>
+                                        <span className="sm:text-sm md:text-base md:ml-0.5">
+                                            {stars_count ?? stargazers_count}
+                                        </span>
                                     </div>
                                 </div>}
                             />)
