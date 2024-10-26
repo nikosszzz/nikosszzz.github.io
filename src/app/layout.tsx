@@ -1,13 +1,10 @@
-import dynamic from "next/dynamic";
+import dynamicLoad from "next/dynamic";
 import React, { Suspense } from "react";
 import { Metadata } from "next";
-import { configDotenv } from "dotenv";
 import { Inter } from 'next/font/google';
 
-configDotenv();
-
-const Footer = dynamic(() => import("./components/Footer"));
-const Navbar = dynamic(() => import("./components/NavBar"));
+const Footer = dynamicLoad(() => import("./components/Footer"));
+const Navbar = dynamicLoad(() => import("./components/NavBar"));
 
 import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
@@ -15,11 +12,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'nikoszz - Personal Website',
   description: 'Welcome to my website.',
-  icons: "https://avatars.githubusercontent.com/u/53112175",
-  openGraph: {
-    title: 'nikoszz - Personal Website',
-    description: 'Welcome to my website.'
-  }
+  icons: "https://avatars.githubusercontent.com/u/53112175"
 }
 
 export default function RootLayout({
@@ -28,20 +21,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="min-h-[100vh]">
-      <body className={`${inter.className} min-h-[100vh] antialiased`}>
-        <Suspense>
-          <div className="min-h-screen flex flex-col justify-between">
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
+        <div className="flex flex-col min-h-screen">
+          <Suspense>
             <Navbar />
-            <div className="flex flex-col flex-1 p-20 sm:p-5 mt-16">
-              <div className="flex-grow">
-                {children}
-              </div>
-              <Footer />
-            </div>
-          </div>
-        </Suspense>
+            <main className="flex-grow flex flex-col px-5 pt-5 mt-16">
+              {children}
+            </main>
+            <Footer />
+          </Suspense>
+        </div>
       </body>
     </html>
-  )
+  );
 }

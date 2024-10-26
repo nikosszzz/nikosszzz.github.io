@@ -27,8 +27,8 @@ export default function Navbar() {
         <div className="fixed z-20 top-0 start-0 w-full ps-10 pe-10 sm:ps-3 sm:pe-3 bg-secondary">
             <nav className='flex justify-between items-center h-16'>
                 <div className="flex flex-row items-center gap-2 ">
-                    <button>
-                        <Image src="/githubpfp.webp" width={460} height={460} className='w-9 h-9 rounded-2xl' alt={""} onClick={() => {
+                    <button aria-label="github pfp">
+                        <Image src="/githubpfp.webp" priority={true} width={460} height={460} className='w-9 h-9 rounded-2xl' alt={""} onClick={() => {
                             if (pathname !== "/") router.push("/")
                         }} />
                     </button>

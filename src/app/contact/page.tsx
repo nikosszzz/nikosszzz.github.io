@@ -42,10 +42,10 @@ export default function Contact() {
             <div className="text-5xl md:text-6xl inline-block mb-2 font-extrabold">Contact</div>
             <div className="flex flex-col items-start">
                 {contactData.map((d) => (
-                    <Button key={d.platform.toLowerCase()} className="bg-transparent flex flex-row gap-2 pl-0 pt-1">
+                    <Button key={d.platform.toLowerCase()} btnUrlInfo={{ url: d.url, target: "_blank" }} className="bg-transparent flex flex-row gap-2 pl-0 pt-1">
                         <span className="p-1">{d.icon}</span>
-                        <div className="text-2xl">{d.platform}</div>
-                        <a href={d.url} target="_blank" className="ml-2 text-xl bg-primary rounded-xl px-2">{d.name}</a>
+                        <span className="text-2xl">{d.platform}</span>
+                        <span className="ml-2 text-xl bg-primary rounded-xl px-2">{d.name}</span>
                     </Button>
                 ))}
             </div>

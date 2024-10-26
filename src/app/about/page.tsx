@@ -81,13 +81,13 @@ export default async function About() {
             const requestInit = {
                 headers: new Headers({
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+                    "Cache-Control": "max-age=31536000",
+                    "Accept": "application/vnd.github.v3+json",
+                    "Authorization": `Bearer ${process.env.GH_KEY}`
                 }),
                 cache: "force-cache"
             } satisfies RequestInit;
-
-            requestInit.headers.set("Accept", "application/vnd.github.v3+json");
-            requestInit.headers.set("Authorization", `Bearer ${process.env.GH_KEY}`);
-
+ 
             return fetch(repo, requestInit)
                 .then(async r => {
                     if (!r.ok) {

@@ -1,5 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,16 +14,6 @@ module.exports = {
         "black-200": "#1d2021",
         "white-100": "#f3f3f3",
         "wash": "rgb(255, 255, 255 / 1)"
-      },
-      animation: {
-        "typing": "blinking 1s infinite",
-      },
-      keyframes: {
-        blinking: {
-          "50%": {
-            "color": "transparent"
-          }
-        }
       }
     },
     screens: {
@@ -34,4 +23,4 @@ module.exports = {
     }
   },
   plugins: [],
-}
+} satisfies import('tailwindcss').Config;

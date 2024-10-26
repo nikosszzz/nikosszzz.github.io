@@ -5,7 +5,7 @@ import tailwind from "../../../public/tailwind.png";
 export default function Footer() {
     return (
         //#292e2e - old color
-        <div className="sm:text-base md:text-xl text-center justify-center flex flex-row">
+        <div className="bottom-0 sm:text-base md:text-xl text-center justify-center flex flex-row mb-5">
             Made with ❤️ using
             {<Image src={nextjs} height={28} width={28} alt={"Tailwind CSS"} className="mx-1.5" />}
             and
